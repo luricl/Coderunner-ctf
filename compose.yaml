@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    # Loopback by default: this box is intentionally vulnerable, keep it local.
+    # Set CODERUNNER_BIND_ADDRESS=0.0.0.0 only if you need other hosts to reach it.
+    ports:
+      - "${CODERUNNER_BIND_ADDRESS:-127.0.0.1}:${CODERUNNER_HTTP_PORT:-5000}:5000"
+      # Host default is 2222 so it doesn't collide with the host's own sshd.
+      - "${CODERUNNER_BIND_ADDRESS:-127.0.0.1}:${CODERUNNER_SSH_PORT:-2222}:22"
