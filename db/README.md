@@ -6,9 +6,9 @@ This directory houses the static database artifacts for the Coderunner CTF chall
 
 | File | Description |
 | --- | --- |
-| `schema.sql` | Table definitions (`users`, `snippets`). |
-| `seed.sql` | Initial data containing preloaded users and code snippets. |
-| `init_db.py` | Python utility to recreate `database.db` from `schema.sql` and `seed.sql`. |
+| `schema.sql` | Table definitions reference (`users`, `snippets`). |
+| `seed.sql` | Seed data SQL reference. |
+| `init_db.py` | Python utility using Flask-SQLAlchemy (`app.models`) to recreate `database.db`. |
 | `database.db` | Static, versioned SQLite database. Distributed inside the container at `/opt/app/instance/database.db`. |
 
 ## Credential Design
